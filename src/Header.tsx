@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
+import { theme } from './theme';
 
 const Container = styled.div`
   position: relative;
@@ -15,13 +16,21 @@ const Banner = styled.div`
   color: #fff;
   padding: 40px 80px;
   border: 5px solid #fff;
+  transition: background-color 0.5s ease, box-shadow 0.2s ease;
   background-color: rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  pointer-events: fill;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.55);
+    box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.2);
+  }
 `;
 
 const H1 = styled.h1`
   font-size: 40px;
   margin-bottom: 10px;
+  color: ${theme.primary}
 `;
 
 const H2 = styled.h2`
@@ -37,7 +46,7 @@ const Body = styled.p`
 export class Header extends PureComponent {
   render() {
     return (
-      <Container>
+      <Container >
         <Banner>
           <H1>Hello</H1>
           <H2>I’m a developer</H2>

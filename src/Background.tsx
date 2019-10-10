@@ -1,14 +1,9 @@
+// @ts-ignore
+import anime from 'animejs/lib/anime.es.js';
 import Color from 'color';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-// @ts-ignore
-import anime from 'animejs/lib/anime.es.js';
-
-const theme = {
-  background: '#262626',
-  primary: '#a8781c',
-  secondary: '#ac401e',
-};
+import { theme } from './theme';
 
 const StyledContainer = styled.div`
   z-index: 0;
