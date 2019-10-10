@@ -1,4 +1,4 @@
-import color from 'color';
+import Color from 'color';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 // @ts-ignore
@@ -6,8 +6,8 @@ import anime from 'animejs/lib/anime.es.js';
 
 const theme = {
   background: '#262626',
-  primary: '#947214',
-  secondary: '#aa4c1d',
+  primary: '#a8781c',
+  secondary: '#ac401e',
 };
 
 const StyledContainer = styled.div`
@@ -25,10 +25,10 @@ const StyledContainer = styled.div`
   background: ${theme.background}
     linear-gradient(
       140deg,
-      ${color(theme.background)
+      ${Color(theme.background)
         .darken(0.4)
         .hex()},
-      ${color(theme.background)
+      ${Color(theme.background)
         .darken(0.2)
         .hex()}
     );
@@ -38,15 +38,16 @@ const StyledTile = styled.div<{ width: number; height: number; color: string }>`
   width: ${({ width }) => `${width}px`};
   height: 100%;
   background-color: ${({ color }) => color};
+  opacity: ${() => Math.max(0.6, Math.random())};
 `;
 
 type Props = {};
 type State = { gridSize: number[] };
 
 const NO_COLORS = 20;
-const baseColor = color(theme.background);
+const baseColor = Color(theme.background);
 const COLORS = new Array(NO_COLORS).fill(1).map((_, i) => {
-  const mixer = i % 2 === 0 ? baseColor : color(theme.primary).darken(0.8);
+  const mixer = i % 2 === 0 ? baseColor : Color(theme.primary).darken(0.8);
   return baseColor
     .darken(i / 500)
     .mix(mixer, 0.1)
@@ -57,13 +58,10 @@ export class Background extends PureComponent<Props, State> {
   state = { gridSize: [40, 20] };
 
   animate = (index: number) => {
-    const val = -10 + Math.random() * 20;
     anime({
       targets: '.tile',
-      skew: [val, val, 0],
-      rotate: [val, val, 0],
       scale: [
-        { value: 0.9, easing: 'easeOutSine', duration: 300 },
+        { value: 0.8, easing: 'easeOutSine', duration: 300 },
         { value: 1, easing: 'easeInOutQuad', duration: 600 },
       ],
       duration: 200,

@@ -3,17 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "parcel src/index.html --port 3000",
+    "build": "parcel build src/index.html"
   },
   "dependencies": {
     "animejs": "^3.1.0",
     "color": "^3.1.2",
+    "parcel": "^1.12.4",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-scripts": "^3.2.0",
     "react-scroll-parallax": "^2.2.0",
     "reset-css": "^4.0.1",
     "styled-components": "^4.4.0",
@@ -24,21 +22,8 @@
     "@types/react": "^16.9.5",
     "@types/react-dom": "^16.9.1",
     "@types/styled-components": "^4.1.19",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react-app": "^9.0.2",
     "prettier": "^1.18.2"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
