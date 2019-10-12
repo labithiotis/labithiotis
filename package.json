@@ -12,6 +12,7 @@
     "parcel": "^1.12.4",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-icons": "^3.7.0",
     "react-scroll-parallax": "^2.2.0",
     "reset-css": "^4.0.1",
     "styled-components": "^4.4.0",

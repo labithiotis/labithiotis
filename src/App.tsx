@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import { Background } from './Background';
-import { Page } from './Page';
+import { FadeIn } from './components/FadeIn';
+import { Page } from './page/Page';
 
 const Container = styled.div`
   width: 100%;
@@ -13,6 +14,7 @@ export default class App extends PureComponent {
   render() {
     return (
       <Container>
+        <FadeIn />
         <Page />
         <Background />
       </Container>
