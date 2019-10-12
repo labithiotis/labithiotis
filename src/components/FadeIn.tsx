@@ -28,5 +28,5 @@ export const Overlay = styled.div`
 export function FadeIn() {
   const [visible, setVisible] = useState(true);
   setTimeout(() => setVisible(false), TIME);
-  return visible && <Overlay />;
+  return visible ? <Overlay /> : null;
 }
