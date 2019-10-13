@@ -1,20 +1,10 @@
 import React, { PureComponent } from 'react';
-import styled from 'styled-components';
-import { H1, Body, MainContainer } from '../components/Typography';
-import { theme } from '../theme';
-
-const Section = styled.div`
-  background-color: white;
-  color: ${theme.background};
-  min-height: 400px;
-  display: flex;
-  justify-content: center;
-`;
+import { H1, Body, MainContainer, Section } from '../components/Typography';
 
 export class AboutMe extends PureComponent {
   render() {
     return (
-      <Section>
+      <Section minHeight="400px">
         <MainContainer>
           <H1>About me</H1>
           <Body>

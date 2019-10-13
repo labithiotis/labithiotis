@@ -5,7 +5,7 @@ import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import { theme } from './theme';
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.div<{ tileSize: number }>`
   z-index: 0;
   position: fixed;
   top: 0;
@@ -27,13 +27,15 @@ const StyledContainer = styled.div`
         .darken(0.2)
         .hex()}
     );
+
+  .tile {
+    width: ${({ tileSize }) => `${tileSize}px`};
+    height: 100%;
+  }
 `;
 
-const StyledTile = styled.div<{ width: number; height: number; color: string }>`
-  width: ${({ width }) => `${width}px`};
-  height: 100%;
+const StyledTile = styled.div<{ color: string }>`
   background-color: ${({ color }) => color};
-  opacity: ${() => Math.max(0.6, Math.random())};
 `;
 
 type Props = {};
@@ -44,7 +46,7 @@ const baseColor = Color(theme.background);
 const COLORS = new Array(NO_COLORS).fill(1).map((_, i) => {
   const mixer = i % 2 === 0 ? baseColor : Color(theme.primary).darken(0.8);
   return baseColor
-    .darken(i / 500)
+    .darken(i / 150)
     .mix(mixer, 0.1)
     .hex();
 });
@@ -73,19 +75,19 @@ function Container({ animate, gridSize }: { animate: (index: number) => void; gr
   const items = new Array(gridSize[0] * gridSize[1]).fill(1);
   const tileSize = window.self.innerWidth / gridSize[0];
   return (
-    <StyledContainer>
+    <StyledContainer tileSize={tileSize}>
       {items.map((_, key) => {
         const color = COLORS[Math.round(Math.min(Math.random() * NO_COLORS, NO_COLORS - 1))];
-        return <TileContainer key={key} onClick={() => animate(key)} color={color} tileSize={tileSize} />;
+        return <TileContainer key={key} onClick={() => animate(key)} color={color} />;
       })}
     </StyledContainer>
   );
 }
 
-function TileContainer({ onClick, color, tileSize }: any) {
+function TileContainer({ onClick, color }: { onClick: () => void; color: string }) {
   return (
     <div onClick={onClick}>
-      <StyledTile className="tile" color={color} width={tileSize} height={tileSize} />
+      <StyledTile className="tile" color={color} />
     </div>
   );
 }

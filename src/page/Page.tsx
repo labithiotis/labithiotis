@@ -1,12 +1,14 @@
 import React, { PureComponent } from 'react';
-import { ParallaxProvider, Parallax, ParallaxBanner } from 'react-scroll-parallax/cjs';
+import { ParallaxProvider, ParallaxBanner } from 'react-scroll-parallax/cjs';
 import styled from 'styled-components';
 import { AboutMe } from './AboutMe';
+import { Gallery } from './Gallery';
 import { Header } from './Header';
 import { Links } from './Links';
+import MountainImage from '../assets/images/mountain.jpg';
 
 const Container = styled.div`
-  z-index: 10;
+  z-index: 20;
   position: relative;
   pointer-events: none;
 
@@ -26,14 +28,22 @@ export class Page extends PureComponent {
           <ParallaxBanner
             layers={[
               {
-                image: 'https://picsum.photos/1000/500',
+                image: MountainImage,
                 amount: 0.5,
                 children: null,
-              }
+              },
             ]}
             style={{ height: '50vh', minHeight: '300px' }}
           />
           <AboutMe />
+          <Gallery
+            images={[
+              {
+                caption: 'Bopple',
+                source: { regular: '/images/work/websites/boppl.jpg' },
+              },
+            ]}
+          />
         </ParallaxProvider>
       </Container>
     );

@@ -19,7 +19,7 @@ const Banner = styled.div`
   transition: background-color 0.5s ease, box-shadow 0.2s ease;
   background-color: rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  pointer-events: fill;
+  pointer-events: auto;
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.55);
@@ -33,8 +33,8 @@ export class Header extends PureComponent {
       <Section>
         <Banner>
           <H1>Hello</H1>
-          <H2>I’m a developer</H2>
-          <Body>A Designer, Coder, and Gamer</Body>
+          <H2>I’m a software engineer</H2>
+          <Body>Designer, Gamer, and a Parent</Body>
         </Banner>
       </Section>
     );

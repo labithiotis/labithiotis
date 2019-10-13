@@ -11,6 +11,7 @@
     "color": "^3.1.2",
     "preact": "^10.0.0",
     "react-icons": "^3.7.0",
+    "react-images": "^1.0.0",
     "react-scroll-parallax": "^2.2.0",
     "reset-css": "^4.0.1",
     "styled-components": "^4.4.0"
@@ -19,13 +20,20 @@
     "@babel/core": "^7.6.4",
     "@babel/preset-react": "^7.6.3",
     "@types/color": "^3.0.0",
+    "@types/react": "^16.9.5",
     "@types/styled-components": "^4.1.19",
     "parcel": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.2.1",
     "prettier": "^1.18.2",
     "typescript": "^3.6.4"
   },
   "alias": {
     "react": "preact/compat",
     "react-dom": "preact/compat"
+  },
+  "staticFiles": {
+    "staticPath": {
+      "staticPath": "src/assets"
+    }
   }
 }
