@@ -3,7 +3,9 @@ import Carousel, { ModalGateway, Modal } from 'react-images';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Section, MainContainer } from '../components/Typography';
 
-type Image = {
+export type Media = {
+  type: 'image' | 'video';
+  group: string;
   caption: ReactNode;
   source: {
     regular: string;
@@ -12,7 +14,7 @@ type Image = {
 };
 
 type Props = {
-  images: Image[];
+  media: Media[];
 };
 
 type State = {
@@ -31,27 +33,25 @@ export class Gallery extends PureComponent<Props, State> {
   };
 
   render() {
-    const { images } = this.props;
+    const { media } = this.props;
     return (
       <Fragment>
         <GlobalStyle />
         <Section minHeight="400px">
           <MainContainer>
-            <div>
-              {images.map(({ caption, source }, index) => (
-                <Thumbnail
-                  key={index}
-                  src={source.thumbnail || source.regular}
-                  onClick={() => this.toggleLightBox(index)}
-                />
-              ))}
-            </div>
+            {media.map(({ caption, source }, index) => (
+              <Thumbnail
+                key={index}
+                src={source.thumbnail || source.regular}
+                onClick={() => this.toggleLightBox(index)}
+              />
+            ))}
           </MainContainer>
         </Section>
         <ModalGateway>
           {this.state.showLightBox ? (
             <Modal onClose={this.toggleLightBox}>
-              <Carousel views={images} currentIndex={this.state.selectedIndex} frameProps={{ autoSize: 'height' }} />
+              <Carousel views={media} currentIndex={this.state.selectedIndex} frameProps={{ autoSize: 'height' }} />
             </Modal>
           ) : null}
         </ModalGateway>
