@@ -17,13 +17,13 @@ const StyledContainer = styled.div<{ tileSize: number }>`
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  background: ${theme.background}
+  background: ${({ theme }) => theme.background}
     linear-gradient(
       140deg,
-      ${Color(theme.background)
+      ${({ theme }) => Color(theme.background)
         .darken(0.4)
         .hex()},
-      ${Color(theme.background)
+      ${({ theme }) => Color(theme.background)
         .darken(0.2)
         .hex()}
     );

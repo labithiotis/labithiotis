@@ -34,7 +34,7 @@ export class Header extends PureComponent {
         <Banner>
           <H1>Hello</H1>
           <H2>I’m a software engineer</H2>
-          <Body>Designer, Gamer, and a Parent</Body>
+          <Body>Designer, Gamer and a Parent</Body>
         </Banner>
       </Section>
     );

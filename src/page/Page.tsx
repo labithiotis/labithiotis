@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import { ParallaxProvider, ParallaxBanner } from 'react-scroll-parallax/cjs';
 import styled from 'styled-components';
 import { AboutMe } from './AboutMe';
-import { Gallery } from './Gallery';
-import { media } from './media';
+import { Footer } from './Footer';
+import { Gallery } from './Gallery/Gallery';
 import { Header } from './Header';
 import { Links } from './Links';
 import MountainImage from '../assets/images/mountain.jpg';
@@ -37,7 +37,18 @@ export class Page extends PureComponent {
             style={{ height: '50vh', minHeight: '300px' }}
           />
           <AboutMe />
-          <Gallery media={media} />
+          <Gallery />
+          <ParallaxBanner
+            layers={[
+              {
+                image: MountainImage,
+                amount: 0.5,
+                children: null,
+              },
+            ]}
+            style={{ height: '50vh', minHeight: '300px' }}
+          />
+          <Footer />
         </ParallaxProvider>
       </Container>
     );

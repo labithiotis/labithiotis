@@ -1,6 +1,5 @@
 import React, { PureComponent, ReactNode } from 'react';
 import styled from 'styled-components';
-import { theme } from '../theme';
 import { FaGithub, FaLinkedinIn, FaRegEnvelope, FaRegFileAlt } from 'react-icons/fa';
 
 const Container = styled.ul`
@@ -41,7 +40,7 @@ const LinkContainer = styled.li`
   &:hover {
     margin-top: -5px;
     background-color: rgba(0, 0, 0, 0.6);
-    border-color: ${theme.primary};
+    border-color: ${({ theme }) => theme.primary};
 
     ${LinkTooltipContainer} {
       visibility: visible;
@@ -70,7 +69,7 @@ const LinkLabel = styled.span`
 const LinkTooltip = styled.div`
   padding: 2px 10px;
   border-radius: 5px;
-  background-color: ${theme.primary};
+  background-color: ${({ theme }) => theme.primary};
   color: #fff;
   font-size: 14px;
 
@@ -85,7 +84,7 @@ const LinkTooltip = styled.div`
     pointer-events: none;
     border: solid transparent; // need this
     border-color: rgba(0, 0, 0, 0);
-    border-bottom-color: ${theme.primary};
+    border-bottom-color: ${({ theme }) => theme.primary};
     border-width: 10px;
     margin-left: -10px;
     backface-visibility: hidden;
@@ -97,7 +96,7 @@ export class Links extends PureComponent {
   render() {
     return (
       <Container>
-        <LinkItem icon={<FaRegFileAlt />} tooltip="CV" target="_self" href="http://labithiotis.co.uk/Darren_Labithiotis_CV.pdf" />
+        <LinkItem icon={<FaRegFileAlt />} tooltip="CV" target="_self" href="/Darren_Labithiotis_CV.pdf" />
         <LinkItem icon={<FaLinkedinIn />} tooltip="LinkedIn" href="https://www.linkedin.com/in/labithiotis" />
         <LinkItem icon={<FaGithub />} tooltip="Github" href="https://github.com/labithiotis" />
         <LinkItem icon={<FaRegEnvelope />} tooltip="Email" href="mailto:darren@labithiotis.co.uk" />

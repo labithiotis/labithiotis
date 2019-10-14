@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { Background } from './Background';
 import { FadeIn } from './components/FadeIn';
 import { Page } from './page/Page';
+import { theme } from './theme';
 
 const Container = styled.div`
   width: 100%;
@@ -13,11 +14,13 @@ const Container = styled.div`
 export default class App extends PureComponent {
   render() {
     return (
-      <Container>
-        <FadeIn />
-        <Page />
-        <Background />
-      </Container>
+      <ThemeProvider theme={theme}>
+        <Container>
+          <FadeIn />
+          <Page />
+          <Background />
+        </Container>
+      </ThemeProvider>
     );
   }
 }
