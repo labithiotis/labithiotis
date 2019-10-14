@@ -1,6 +1,23 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import { H1, H2, Body } from '../components/Typography';
+import { FaRegHeart } from 'react-icons/fa';
+
+export class Header extends PureComponent {
+  render() {
+    return (
+      <Section>
+        <Banner>
+          <Title>Welcome</Title>
+          <SubTitle>I’m an experienced software engineer</SubTitle>
+          <SubTitleSmall>
+            Working remotely from Austria <FaRegHeart size={12} />
+          </SubTitleSmall>
+        </Banner>
+      </Section>
+    );
+  }
+}
 
 const Section = styled.div`
   position: relative;
@@ -22,21 +39,19 @@ const Banner = styled.div`
   pointer-events: auto;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.55);
-    box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   }
 `;
 
-export class Header extends PureComponent {
-  render() {
-    return (
-      <Section>
-        <Banner>
-          <H1>Hello</H1>
-          <H2>I’m a software engineer</H2>
-          <Body>Designer, Gamer and a Parent</Body>
-        </Banner>
-      </Section>
-    );
-  }
-}
+const Title = styled(H1)`
+  margin-bottom: 15px;
+`;
+
+const SubTitle = styled(H2)`
+  margin-bottom: 5px;
+`;
+const SubTitleSmall = styled(H2)`
+  font-size: 14px;
+  margin-bottom: 5px;
+`;

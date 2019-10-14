@@ -7,17 +7,7 @@ import { Gallery } from './Gallery/Gallery';
 import { Header } from './Header';
 import { Links } from './Links';
 import MountainImage from '../assets/images/mountain.jpg';
-
-const Container = styled.div`
-  z-index: 20;
-  position: relative;
-  pointer-events: none;
-
-  .parallax-outer,
-  .parallax-inner {
-    pointer-events: none;
-  }
-`;
+import HouseImage from '../assets/images/house.jpg';
 
 export class Page extends PureComponent {
   render() {
@@ -41,12 +31,12 @@ export class Page extends PureComponent {
           <ParallaxBanner
             layers={[
               {
-                image: MountainImage,
-                amount: 0.5,
+                image: HouseImage,
+                amount: 0.7,
                 children: null,
               },
             ]}
-            style={{ height: '50vh', minHeight: '300px' }}
+            style={{ height: '60vh', minHeight: '300px' }}
           />
           <Footer />
         </ParallaxProvider>
@@ -54,3 +44,14 @@ export class Page extends PureComponent {
     );
   }
 }
+
+const Container = styled.div`
+  z-index: 20;
+  position: relative;
+  pointer-events: none;
+
+  .parallax-outer,
+  .parallax-inner {
+    pointer-events: none;
+  }
+`;

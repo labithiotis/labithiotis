@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 const TIME = 4000;
 
+export function FadeIn() {
+  const [visible, setVisible] = useState(true);
+  setTimeout(() => setVisible(false), TIME);
+  return visible ? <Overlay /> : null;
+}
+
 export const Overlay = styled.div`
   position: fixed;
   top: 0;
@@ -24,9 +30,3 @@ export const Overlay = styled.div`
     }
   }
 `;
-
-export function FadeIn() {
-  const [visible, setVisible] = useState(true);
-  setTimeout(() => setVisible(false), TIME);
-  return visible ? <Overlay /> : null;
-}

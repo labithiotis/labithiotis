@@ -2,18 +2,18 @@ import styled from 'styled-components';
 
 export const H1 = styled.h1`
   font-size: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: ${({ theme }) => theme.primary};
 `;
 
 export const H2 = styled.h2`
   font-size: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 `;
 
 export const Body = styled.p`
   font-size: 16px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 `;
 
 export const Section = styled.div<{ color?: string; backgroundColor?: string; minHeight?: string }>`
@@ -22,6 +22,7 @@ export const Section = styled.div<{ color?: string; backgroundColor?: string; mi
   background-color: ${({ backgroundColor = 'white' }) => backgroundColor};
   color: ${({ color, theme }) => color || theme.black};
   min-height: ${({ minHeight = '0px' }) => minHeight};
+  pointer-events: auto;
 `;
 
 export const MainContainer = styled.div`

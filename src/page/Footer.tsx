@@ -9,7 +9,7 @@ export class Footer extends PureComponent {
       <Section>
         <Contents>
           <div>
-            <strong>Created by </strong>Darren Labithiotis
+            <strong>Built by</strong> Darren Labithiotis
           </div>
           <div>
             2009-{new Date().toISOString().substr(0, 4)} ©{' '}

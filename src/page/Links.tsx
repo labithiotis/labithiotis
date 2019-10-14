@@ -2,12 +2,49 @@ import React, { PureComponent, ReactNode } from 'react';
 import styled from 'styled-components';
 import { FaGithub, FaLinkedinIn, FaRegEnvelope, FaRegFileAlt } from 'react-icons/fa';
 
+export class Links extends PureComponent {
+  render() {
+    return (
+      <Container>
+        <LinkItem icon={<FaRegFileAlt />} tooltip="CV" target="_self" href="/Darren_Labithiotis_CV.pdf" />
+        <LinkItem icon={<FaLinkedinIn />} tooltip="LinkedIn" href="https://www.linkedin.com/in/labithiotis" />
+        <LinkItem icon={<FaGithub />} tooltip="Github" href="https://github.com/labithiotis" />
+        <LinkItem icon={<FaRegEnvelope />} tooltip="Email" href="mailto:darren@labithiotis.co.uk" />
+      </Container>
+    );
+  }
+}
+
+function LinkItem({
+  icon,
+  tooltip,
+  href,
+  target = '_blank',
+}: {
+  icon: ReactNode;
+  tooltip: ReactNode;
+  href: string;
+  target?: string;
+}) {
+  return (
+    <LinkContainer>
+      <Link href={href} target={target}>
+        <LinkLabel>{icon}</LinkLabel>
+        <LinkTooltipContainer>
+          <LinkTooltip>{tooltip}</LinkTooltip>
+        </LinkTooltipContainer>
+      </Link>
+    </LinkContainer>
+  );
+}
+
 const Container = styled.ul`
   position: fixed;
   top: 0;
   right: 30px;
   list-style-type: none;
-  pointer-events: fill;
+  pointer-events: auto;
+  z-index: 100;
 `;
 
 const LinkTooltipContainer = styled.div`
@@ -91,39 +128,3 @@ const LinkTooltip = styled.div`
     transition: opacity 0.3s ease;
   }
 `;
-
-export class Links extends PureComponent {
-  render() {
-    return (
-      <Container>
-        <LinkItem icon={<FaRegFileAlt />} tooltip="CV" target="_self" href="/Darren_Labithiotis_CV.pdf" />
-        <LinkItem icon={<FaLinkedinIn />} tooltip="LinkedIn" href="https://www.linkedin.com/in/labithiotis" />
-        <LinkItem icon={<FaGithub />} tooltip="Github" href="https://github.com/labithiotis" />
-        <LinkItem icon={<FaRegEnvelope />} tooltip="Email" href="mailto:darren@labithiotis.co.uk" />
-      </Container>
-    );
-  }
-}
-
-function LinkItem({
-  icon,
-  tooltip,
-  href,
-  target = '_blank',
-}: {
-  icon: ReactNode;
-  tooltip: ReactNode;
-  href: string;
-  target?: string;
-}) {
-  return (
-    <LinkContainer>
-      <Link href={href} target={target}>
-        <LinkLabel>{icon}</LinkLabel>
-        <LinkTooltipContainer>
-          <LinkTooltip>{tooltip}</LinkTooltip>
-        </LinkTooltipContainer>
-      </Link>
-    </LinkContainer>
-  );
-}

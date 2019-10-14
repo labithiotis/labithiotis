@@ -8,25 +8,20 @@ export class AboutMe extends PureComponent {
         <MainContainer>
           <H1>About me</H1>
           <Body>
-            I have been a professional JavaScript developer for the last 5+ years and currently Head of Development for
-            a mobile app company. From building one pager websites, full stack websites, single page web apps and custom
-            components.
+            I'm a senior software engineer working remotely from Austria. I've been programming for the last 10 years,
+            primarily in javascript and in recent years typescript. I use to live and work in Central London. While I
+            lived in London I attended many meetups including the hugely popular Redbadger React meetup, this lead to me
+            becoming a very early adopter of React and React Native.
           </Body>
           <Body>
-            I use various libraries and frameworks such as jQuery, Backbone, Handlebars, React.js, Less, Sass, Node.js,
-            Express, Jade, Mocha, MongoDb, along with DevOps skills on AWS’s platform, using technologies like EBS (ELB,
-            EC2), Lambdas, S3, Cloudfront, and Route53. 2015 saw a radical shift towards adoption of ES6 and I was an
-            early adopter of React, and using Babel to make ES6 (ES7) viable with other great tools like webpack and
-            gulp.
+            I'm thoroughly passionate about programming, it allows one to build a rich experience for users, I truly
+            believe technology is aiding society. Early in my carrier, I was a Designer, which gave me great insight and
+            a keen eye for UI/UX. I've always been technical and wanted to pursue the full end to end development of
+            ideas, thus I set my sites on developing those, from frontend to backend and infrastructure to support that.
           </Body>
           <Body>
-            I’m a big fan of using ES6, and more recently have looked at other newer libraries like immutable.js, redux,
-            typeScript and am looking at adopting BEM-CSS style. Before becoming a JavaScript developer I worked as a
-            game designer, thus I am very proficient at Photoshop and Sketch, these skills have combined with my coding
-            ability to help me deliver projects to a high standard. Outside of work, I attend meetups involved within
-            the web community. One I regularly attend, is the Facebook React meetup, held monthly. Meeting the very
-            talented individuals who have built tools used by millions, such as Babel and redux, both of which enjoy a
-            beer or two afterwards.
+            Since 2017 I relocated to the Austria mountains to become a remote engineer, advances in technology making
+            doing some almost seamless. I use a variety of tools to aid working remotely easy.
           </Body>
         </MainContainer>
       </Section>
