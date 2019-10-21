@@ -9,9 +9,11 @@ export class AboutMe extends PureComponent {
           <H1>About me</H1>
           <Body>
             I'm a senior software engineer working remotely from Austria. I've been programming for the last 10 years,
-            primarily in javascript and in recent years typescript. I use to live and work in Central London. While I
-            lived in London I attended many meetups including the hugely popular Redbadger React meetup, this lead to me
-            becoming a very early adopter of React and React Native.
+            primarily in <strong>JavaScript</strong> and in recent years <strong>TypeScript</strong>. I use to live and
+            work in Central London. While I lived in London I attended many meetups including the hugely popular
+            Redbadger React meetup, this lead to me becoming a very early adopter of React and React Native, and I
+            haven't looked back. The tooling around Javascript has exploded in the last decade allow us developers to
+            build very sophisticated applications.
           </Body>
           <Body>
             I'm thoroughly passionate about programming, it allows one to build a rich experience for users, I truly

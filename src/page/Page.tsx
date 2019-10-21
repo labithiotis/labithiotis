@@ -9,11 +9,17 @@ import { Links } from './Links';
 import MountainImage from '../assets/images/mountain.jpg';
 import HouseImage from '../assets/images/house.jpg';
 
-export class Page extends PureComponent {
+type Props = {};
+
+export class Page extends PureComponent<Props> {
+  componentDidMount(): void {
+    document.getElementsByName('body')
+  }
+
   render() {
     return (
-      <Container>
-        <ParallaxProvider>
+      <ParallaxProvider>
+        <Container>
           <Links />
           <Header />
           <ParallaxBanner
@@ -22,6 +28,7 @@ export class Page extends PureComponent {
                 image: MountainImage,
                 amount: 0.5,
                 children: null,
+                expanded: true,
               },
             ]}
             style={{ height: '50vh', minHeight: '300px' }}
@@ -39,8 +46,8 @@ export class Page extends PureComponent {
             style={{ height: '60vh', minHeight: '300px' }}
           />
           <Footer />
-        </ParallaxProvider>
-      </Container>
+        </Container>
+      </ParallaxProvider>
     );
   }
 }

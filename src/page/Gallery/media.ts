@@ -108,12 +108,6 @@ export const media: Media[] = [
     type: MediaTypes.image,
     group: 'Games',
     caption: '',
-    source: { regular: '/images/art/pquizzy.jpg' },
-  },
-  {
-    type: MediaTypes.image,
-    group: 'Games',
-    caption: '',
     source: { regular: '/images/art/jubjub.jpg' },
   },
   {
@@ -121,18 +115,6 @@ export const media: Media[] = [
     group: 'Games',
     caption: '',
     source: { regular: '/images/art/g5.jpg' },
-  },
-  {
-    type: MediaTypes.image,
-    group: 'Games',
-    caption: '',
-    source: { regular: '/images/art/g52.jpg' },
-  },
-  {
-    type: MediaTypes.image,
-    group: 'Games',
-    caption: '',
-    source: { regular: '/images/art/icarlyremote.jpg' },
   },
   {
     type: MediaTypes.image,
@@ -258,42 +240,12 @@ export const media: Media[] = [
     type: MediaTypes.image,
     group: 'Games',
     caption: '',
-    source: { regular: '/images/art/immunization.jpg' },
-  },
-  {
-    type: MediaTypes.image,
-    group: 'Games',
-    caption: '',
     source: { regular: '/images/art/quicksand.jpg' },
   },
   {
     type: MediaTypes.image,
     group: 'Games',
     caption: '',
-    source: { regular: '/images/art/towers.jpg' },
-  },
-  {
-    type: MediaTypes.image,
-    group: 'Games',
-    caption: '',
-    source: { regular: '/images/art/dirt.jpg' },
-  },
-  {
-    type: MediaTypes.image,
-    group: 'Games',
-    caption: '',
     source: { regular: '/images/art/monstermunch.jpg' },
-  },
-  {
-    type: MediaTypes.image,
-    group: 'Games',
-    caption: '',
-    source: { regular: '/images/art/rivercrossing.jpg' },
-  },
-  {
-    type: MediaTypes.image,
-    group: 'Games',
-    caption: '',
-    source: { regular: '/images/art/stars.jpg' },
   },
 ];

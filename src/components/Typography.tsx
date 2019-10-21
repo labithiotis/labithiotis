@@ -14,6 +14,11 @@ export const H2 = styled.h2`
 export const Body = styled.p`
   font-size: 16px;
   margin-bottom: 10px;
+  color: ${({ color, theme }) => color || theme.black};
+
+  strong {
+    color: #000000;
+  }
 `;
 
 export const Section = styled.div<{ color?: string; backgroundColor?: string; minHeight?: string }>`
