@@ -1,7 +1,8 @@
-import React, { PureComponent, ReactNode, Fragment } from 'react';
+import React, { PureComponent, ReactNode } from 'react';
 import Carousel, { ModalGateway, Modal } from 'react-images';
 import styled, { createGlobalStyle } from 'styled-components';
 import { VideoPlayer } from './VideoPlayer';
+import { FaPlayCircle } from 'react-icons/fa';
 
 export type MediaImage = {
   regular: string;
@@ -52,8 +53,15 @@ export class GalleryGrid extends PureComponent<Props, State> {
     return (
       <Container>
         <GlobalStyle />
-        {media.map(({ caption, source }, index) => (
-          <Thumbnail key={index} src={source.thumbnail || source.regular} onClick={() => this.toggleLightBox(index)} />
+        {media.map(({ caption, source, type }, index) => (
+          <MediaPreview>
+            {type === MediaTypes.video && <VideoPlayIcon />}
+            <Thumbnail
+              key={index}
+              src={source.thumbnail || source.regular}
+              onClick={() => this.toggleLightBox(index)}
+            />
+          </MediaPreview>
         ))}
         <ModalGateway>
           {showLightBox ? (
@@ -80,20 +88,41 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Container = styled.div``;
-const Thumbnail = styled.div<{ src: string }>`
-  background: #e8e8e8 url(${({ src }) => src}) center center;
-  background-size: cover;
-  box-sizing: border-box;
-  float: left;
-  margin: 1px;
-  overflow: hidden;
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const VideoPlayIcon = styled(FaPlayCircle)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -10px;
+  margin-left: -10px;
+  color: white;
+  font-size: 24px;
+`;
+
+const MediaPreview = styled.div`
   position: relative;
-  width: 198px;
+  padding: 2px;
+  width: 25%;
   height: 140px;
+  overflow: hidden;
   cursor: pointer;
+  box-sizing: border-box;
+  transition: padding 0.2s ease, opacity 0.2s ease;
 
   :hover {
-    opacity: 0.9;
+    opacity: 0.8;
+    padding: 4px;
   }
+`;
+
+const Thumbnail = styled.div<{ src: string }>`
+  background: url(${({ src }) => src}) center center;
+  background-size: cover;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 `;

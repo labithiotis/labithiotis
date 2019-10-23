@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import { H1, H2, Body } from '../components/Typography';
+import { H1, H2 } from '../components/Typography';
 import { FaRegHeart } from 'react-icons/fa';
 
 export class Header extends PureComponent {

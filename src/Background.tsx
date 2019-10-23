@@ -10,11 +10,11 @@ type Props = {};
 type State = { gridSize: number[] };
 
 const NO_COLORS = 20;
-const baseColor = Color(theme.background);
+const baseColor = Color(theme.white);
 const COLORS = new Array(NO_COLORS).fill(1).map((_, i) => {
   const mixer = i % 2 === 0 ? baseColor : Color(theme.white).darken(0.8);
   return baseColor
-    .darken(Math.random())
+    .darken(Math.random()/4)
     .mix(mixer, 0.1)
     .hex();
 });
@@ -39,6 +39,7 @@ export class Background extends PureComponent<Props, State> {
       <BackgroundContainer>
         <Fade />
         <TilesContainer animate={this.animate} gridSize={this.state.gridSize} />
+        <BackgroundImage />
       </BackgroundContainer>
     );
   }
@@ -53,8 +54,20 @@ const BackgroundContainer = styled.div`
   left: 0;
   height: 100%;
   width: 100%;
+`;
+
+const BackgroundImage = styled.div`
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   background: ${({ theme }) => theme.background} url(${backgroundImage});
   background-size: cover;
+  filter: blur(5px);
 `;
 
 const Fade = styled.div`
@@ -82,7 +95,8 @@ const Container = styled.div<{ tileSize: number }>`
   flex-wrap: wrap;
   align-items: stretch;
   background: transparent;
-
+  z-index: 5;
+  
   .tile {
     height: 100%;
     width: ${({ tileSize }) => `${tileSize}px`};

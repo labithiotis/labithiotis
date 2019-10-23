@@ -1,6 +1,6 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import { MainContainer, Section } from '../../components/Typography';
+import { Section } from '../../components/Typography';
 import { GalleryGrid, Media } from './GalleryGrid';
 import { media } from './media';
 
@@ -25,7 +25,7 @@ export class Gallery extends PureComponent<Props, State> {
     const { tabNames, currentTab } = this.state;
     return (
       <Section minHeight="400px">
-        <MainContainer>
+        <Container>
           <Tabs>
             {tabNames.map(name => (
               <Tab active={name === currentTab} onClick={() => this.changeTab(name)}>
@@ -34,12 +34,15 @@ export class Gallery extends PureComponent<Props, State> {
             ))}
           </Tabs>
           <GalleryGrid media={tabs[currentTab]} />
-        </MainContainer>
+        </Container>
       </Section>
     );
   }
 }
 
+const Container = styled.div`
+  margin-bottom: 60px;
+`;
 const Tabs = styled.ul`
   list-style: none;
   display: flex;
