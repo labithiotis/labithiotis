@@ -3,24 +3,40 @@ import anime from 'animejs/lib/anime.es.js';
 import Color from 'color';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import { theme } from './theme';
 import backgroundImage from './assets/images/house.jpg';
 
 type Props = {};
 type State = { gridSize: number[] };
 
 const NO_COLORS = 20;
-const baseColor = Color(theme.white);
-const COLORS = new Array(NO_COLORS).fill(1).map((_, i) => {
-  const mixer = i % 2 === 0 ? baseColor : Color(theme.white).darken(0.8);
-  return baseColor
-    .darken(Math.random()/4)
-    .mix(mixer, 0.1)
-    .hex();
-});
+const COLORS = new Array(NO_COLORS).fill(1).map(() =>
+  Color('#0A286D')
+    .darken(Math.random() / 2)
+    .hex()
+);
 
 export class Background extends PureComponent<Props, State> {
-  state = { gridSize: [40, 20] };
+  timer: number = 0;
+  state = { gridSize: [0, 0] };
+
+  componentDidMount() {
+    this.updateGridSize();
+    window.addEventListener('resize', this.updateGridSize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateGridSize);
+  }
+
+  updateGridSize = () => {
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => this.setGridSize(), 500);
+  };
+
+  setGridSize = () => {
+    const { innerWidth, innerHeight } = window;
+    this.setState({ gridSize: [Math.round(innerWidth / 40), Math.round(innerHeight / 20)] });
+  };
 
   animate = (index: number) => {
     anime({
@@ -28,6 +44,10 @@ export class Background extends PureComponent<Props, State> {
       scale: [
         { value: 0.8, easing: 'easeOutSine', duration: 300 },
         { value: 1, easing: 'easeInOutQuad', duration: 600 },
+      ],
+      opacity: [
+        { value: 0.6, easing: 'easeOutSine', duration: 600 },
+        { value: 0.1, easing: 'easeInOutQuad', duration: 600 },
       ],
       duration: 200,
       delay: anime.stagger(50, { grid: this.state.gridSize, start: 0, from: index, easing: 'easeOutSine' }),
@@ -67,7 +87,7 @@ const BackgroundImage = styled.div`
   width: 100%;
   background: ${({ theme }) => theme.background} url(${backgroundImage});
   background-size: cover;
-  filter: blur(5px);
+  filter: blur(3px);
 `;
 
 const Fade = styled.div`
@@ -79,7 +99,7 @@ const Fade = styled.div`
   height: 100%;
   width: 100%;
   z-index: 5;
-  background: transparent linear-gradient(160deg, rgba(0, 0, 0, 0.1), rgba(13, 18, 35, 0.6));
+  background: transparent linear-gradient(170deg, rgba(0, 0, 0, 0), rgb(0, 0, 0, 0.9));
   pointer-events: none;
 `;
 
@@ -93,12 +113,12 @@ const Container = styled.div<{ tileSize: number }>`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  align-items: stretch;
+  justify-items: flex-start;
   background: transparent;
   z-index: 5;
-  
+
   .tile {
-    height: 100%;
+    height: ${({ tileSize }) => `${tileSize}px`};
     width: ${({ tileSize }) => `${tileSize}px`};
   }
 `;
@@ -118,7 +138,15 @@ function TilesContainer({ animate, gridSize }: { animate: (index: number) => voi
 
 const Tile = styled.div<{ color: string; key: number }>`
   background-color: ${({ color }) => color};
-  opacity: ${({ key }) => (key % 2 === 0 ? 0.1 : 0.3)};
+  opacity: 0.15;
+  transition: opacity 1s ease-out;
+
+  :hover {
+    opacity: 0.6 !important;
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.6);
+    transform: scale(1.1);
+  }
 `;
 
 function TileContainer({ onClick, color, key }: { onClick: () => void; color: string; key: number }) {
