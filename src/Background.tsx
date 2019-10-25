@@ -22,8 +22,8 @@ export class Background extends PureComponent<Props, State> {
 
   componentDidMount() {
     this.updateGridSize();
-    window.addEventListener('resize', this.updateGridSize);
-    window.addEventListener('scroll', this.stopAnimation);
+    window.addEventListener('resize', this.updateGridSize, { passive: true });
+    window.addEventListener('scroll', this.stopAnimation, { passive: true });
   }
 
   componentWillUnmount() {
