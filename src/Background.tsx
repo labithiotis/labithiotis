@@ -16,21 +16,24 @@ const COLORS = new Array(NO_COLORS).fill(1).map(() =>
 );
 
 export class Background extends PureComponent<Props, State> {
-  timer: number = 0;
+  animation: anime;
+  updateGridSizeTimeout: number = 0;
   state = { gridSize: [0, 0] };
 
   componentDidMount() {
     this.updateGridSize();
     window.addEventListener('resize', this.updateGridSize);
+    window.addEventListener('scroll', this.stopAnimation);
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateGridSize);
+    window.removeEventListener('scroll', this.stopAnimation);
   }
 
   updateGridSize = () => {
-    clearTimeout(this.timer);
-    this.timer = setTimeout(() => this.setGridSize(), 500);
+    clearTimeout(this.updateGridSizeTimeout);
+    this.updateGridSizeTimeout = setTimeout(() => this.setGridSize(), 500);
   };
 
   setGridSize = () => {
@@ -38,8 +41,15 @@ export class Background extends PureComponent<Props, State> {
     this.setState({ gridSize: [Math.round(innerWidth / 40), Math.round(innerHeight / 20)] });
   };
 
+  stopAnimation = () => {
+    if (this.animation) {
+      this.animation.restart();
+      this.animation.pause();
+    }
+  };
+
   animate = (index: number) => {
-    anime({
+    this.animation = anime({
       targets: '.tile',
       scale: [
         { value: 0.8, easing: 'easeOutSine', duration: 300 },
