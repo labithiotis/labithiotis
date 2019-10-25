@@ -6,7 +6,7 @@ export class Links extends PureComponent {
   render() {
     return (
       <Container>
-        <LinkItem icon={<FaRegFileAlt />} tooltip="CV" target="_self" href="/Darren_Labithiotis_CV.pdf" />
+        <LinkItem icon={<FaRegFileAlt />} tooltip="CV" target="_self" href="./Darren_Labithiotis_CV.pdf" />
         <LinkItem icon={<FaLinkedinIn />} tooltip="LinkedIn" href="https://www.linkedin.com/in/labithiotis" />
         <LinkItem icon={<FaGithub />} tooltip="Github" href="https://github.com/labithiotis" />
         <LinkItem icon={<FaRegEnvelope />} tooltip="Email" href="mailto:darren@labithiotis.co.uk" />
