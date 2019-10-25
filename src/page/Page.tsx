@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { ParallaxProvider, ParallaxBanner } from 'react-scroll-parallax/cjs';
+import { Parallax, Background } from 'react-parallax';
 import styled from 'styled-components';
 import { AboutMe } from './AboutMe';
 import { Footer } from './Footer';
@@ -13,41 +13,24 @@ type Props = {};
 
 export class Page extends PureComponent<Props> {
   componentDidMount(): void {
-    document.getElementsByName('body')
+    document.getElementsByName('body');
   }
 
   render() {
     return (
-      <ParallaxProvider>
-        <Container>
-          <Links />
-          <Header />
-          <ParallaxBanner
-            layers={[
-              {
-                image: MountainImage,
-                amount: 0.5,
-                children: null,
-                expanded: true,
-              },
-            ]}
-            style={{ height: '50vh', minHeight: '300px' }}
-          />
-          <AboutMe />
-          <Gallery />
-          <ParallaxBanner
-            layers={[
-              {
-                image: HouseImage,
-                amount: 0.7,
-                children: null,
-              },
-            ]}
-            style={{ height: '60vh', minHeight: '300px' }}
-          />
-          <Footer />
-        </Container>
-      </ParallaxProvider>
+      <Container>
+        <Links />
+        <Header />
+        <Parallax bgImage={MountainImage} strength={500}>
+          <div style={{ height: '40vh', minHeight: '300px' }} />
+        </Parallax>
+        <AboutMe />
+        <Gallery />
+        <Parallax bgImage={HouseImage} strength={300}>
+          <div style={{ height: '60vh', minHeight: '500px' }} />
+        </Parallax>
+        <Footer />
+      </Container>
     );
   }
 }
