@@ -33,6 +33,7 @@ export const Section = styled.div<{ color?: string; backgroundColor?: string; mi
 export const MainContainer = styled.div`
   position: relative;
   padding: 40px 80px;
+  width: 100%;
   max-width: 800px;
   pointer-events: auto;
 `;

@@ -71,7 +71,7 @@ export class GalleryGrid extends PureComponent<Props, State> {
               </Modal>
             ) : (
               <Modal onClose={this.toggleLightBox} allowFullscreen={false}>
-                <Carousel views={media} currentIndex={selectedIndex} />
+                <Carousel views={media} currentIndex={selectedIndex} frameProps={{ autoSize: 'height' }} />
               </Modal>
             )
           ) : null}

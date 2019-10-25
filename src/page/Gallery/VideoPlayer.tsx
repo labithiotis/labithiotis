@@ -11,7 +11,6 @@ type State = {};
 
 export class VideoPlayer extends PureComponent<Props, State> {
   render() {
-    console.log(this.props);
     return (
       <Container>
         <ReactPlayer url={this.props.data.source.url} />

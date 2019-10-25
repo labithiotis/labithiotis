@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import { Section } from '../../components/Typography';
+import { MainContainer, Section } from '../../components/Typography';
 import { GalleryGrid, Media } from './GalleryGrid';
 import { media } from './media';
 
@@ -40,9 +40,10 @@ export class Gallery extends PureComponent<Props, State> {
   }
 }
 
-const Container = styled.div`
+const Container = styled(MainContainer)`
   margin-bottom: 60px;
 `;
+
 const Tabs = styled.ul`
   list-style: none;
   display: flex;
