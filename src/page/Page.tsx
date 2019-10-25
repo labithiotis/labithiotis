@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Parallax, Background } from 'react-parallax';
+import { Parallax } from 'react-parallax';
 import styled from 'styled-components';
 import { AboutMe } from './AboutMe';
 import { Footer } from './Footer';

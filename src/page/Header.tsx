@@ -38,7 +38,7 @@ const Banner = styled.div`
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   pointer-events: auto;
 
-  &:hover {
+  :hover {
     background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   }
@@ -51,6 +51,7 @@ const Title = styled(H1)`
 const SubTitle = styled(H2)`
   margin-bottom: 5px;
 `;
+
 const SubTitleSmall = styled(H2)`
   font-size: 14px;
   margin-bottom: 5px;
