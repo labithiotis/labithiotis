@@ -22,6 +22,8 @@ export const Body = styled.p`
 `;
 
 export const Section = styled.div<{ color?: string; backgroundColor?: string; minHeight?: string }>`
+  position: relative;
+  z-index: 5;
   display: flex;
   justify-content: center;
   background-color: ${({ backgroundColor = 'white' }) => backgroundColor};

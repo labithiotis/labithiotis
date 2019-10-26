@@ -7,13 +7,15 @@ export class Header extends PureComponent {
   render() {
     return (
       <Section>
-        <Banner>
-          <Title>Welcome</Title>
-          <SubTitle>I’m an experienced software engineer</SubTitle>
-          <SubTitleSmall>
-            Working remotely from Austria <FaRegHeart size={12} />
-          </SubTitleSmall>
-        </Banner>
+        <Contents>
+          <Banner>
+            <Title>Welcome</Title>
+            <SubTitle>I’m an experienced software engineer</SubTitle>
+            <SubTitleSmall>
+              Working remotely from Austria <FaRegHeart size={12} />
+            </SubTitleSmall>
+          </Banner>
+        </Contents>
       </Section>
     );
   }
@@ -21,11 +23,17 @@ export class Header extends PureComponent {
 
 const Section = styled.div`
   position: relative;
+  width: 100%;
+  height: 100vh;
+`;
+const Contents = styled.div`
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
+  z-index: 0;
 `;
 
 const Banner = styled.div`
