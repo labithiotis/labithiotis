@@ -39,7 +39,7 @@ const Contents = styled.div`
 const Banner = styled.div`
   text-align: center;
   color: #fff;
-  padding: 40px 80px;
+  padding: 40px;
   border: 5px solid #fff;
   transition: background-color 0.5s ease, box-shadow 0.2s ease;
   background-color: rgba(0, 0, 0, 0.15);
