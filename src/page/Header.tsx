@@ -42,12 +42,12 @@ const Banner = styled.div`
   padding: 40px;
   border: 5px solid #fff;
   transition: background-color 0.5s ease, box-shadow 0.2s ease;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.7);
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   pointer-events: auto;
 
   :hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   }
 `;
