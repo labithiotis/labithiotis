@@ -1,8 +1,8 @@
 import { Media, MediaTypes } from './GalleryGrid';
 
-enum Groups {
-  mobileApps = 'Mobile Apps',
+export enum Groups {
   websites = 'Websites',
+  mobileApps = 'Mobile Apps',
   games = 'Games',
   fx = '3D',
 }
@@ -38,6 +38,44 @@ export const media: Media[] = [
     caption: 'Star Citizen Field Guide About Screen',
     source: { regular: './images/apps/star_citizen_app_about.jpg' },
   },
+
+  {
+    type: MediaTypes.image,
+    group: Groups.websites,
+    caption: '',
+    source: { regular: './images/websites/triptease/tt_platform_home.png' },
+  },
+  {
+    type: MediaTypes.image,
+    group: Groups.websites,
+    caption: '',
+    source: { regular: './images/websites/triptease/tt_platform_messages.png' },
+  },
+  {
+    type: MediaTypes.image,
+    group: Groups.websites,
+    caption: '',
+    source: { regular: './images/websites/triptease/tt_platform_messages_builder.png' },
+  },
+  {
+    type: MediaTypes.image,
+    group: Groups.websites,
+    caption: '',
+    source: { regular: './images/websites/triptease/tt_messages.png' },
+  },
+  {
+    type: MediaTypes.image,
+    group: Groups.websites,
+    caption: '',
+    source: { regular: './images/websites/triptease/tt_platform_parity_dashboard.png' },
+  },
+  {
+    type: MediaTypes.image,
+    group: Groups.websites,
+    caption: '',
+    source: { regular: './images/websites/triptease/tt_platform_parity_disparities_2.png' },
+  },
+
 
   {
     type: MediaTypes.image,

@@ -1,6 +1,7 @@
 import React, { PureComponent, ReactNode } from 'react';
 import Carousel, { ModalGateway, Modal } from 'react-images';
 import styled, { createGlobalStyle } from 'styled-components';
+import { theme } from '../../theme';
 import { VideoPlayer } from './VideoPlayer';
 import { FaPlayCircle } from 'react-icons/fa';
 
@@ -103,26 +104,35 @@ const VideoPlayIcon = styled(FaPlayCircle)`
   font-size: 24px;
 `;
 
+const Thumbnail = styled.div<{ src: string }>`
+  background: #111111 url(${({ src }) => src}) center center no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  border-radius: 10px;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.4s ease;
+`;
+
 const MediaPreview = styled.div`
   position: relative;
-  padding: 2px;
+  padding: 0px;
   width: 25%;
   height: 140px;
   overflow: hidden;
   cursor: pointer;
   box-sizing: border-box;
-  transition: padding 0.2s ease, opacity 0.2s ease;
+  transition: padding 0.2s ease;
 
   :hover {
-    opacity: 0.8;
-    padding: 4px;
-  }
-`;
+    padding: 2px;
 
-const Thumbnail = styled.div<{ src: string }>`
-  background: url(${({ src }) => src}) center center;
-  background-size: cover;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
+    ${Thumbnail} {
+      background-color: ${theme.primary};
+    }
+  }
 `;

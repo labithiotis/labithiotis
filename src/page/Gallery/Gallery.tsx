@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import { MainContainer, Section } from '../../components/Typography';
 import { GalleryGrid, Media } from './GalleryGrid';
-import { media } from './media';
+import { Groups, media } from './media';
 
 const tabs: { [group: string]: Media[] } = {};
 media.forEach(media => {
@@ -17,7 +17,7 @@ type State = {
 };
 
 export class Gallery extends PureComponent<Props, State> {
-  state: State = { currentTab: Object.keys(tabs)[0], tabNames: Object.keys(tabs) };
+  state: State = { currentTab: Groups.websites, tabNames: Object.values(Groups) };
 
   changeTab = (currentTab: string) => this.setState({ currentTab });
 
