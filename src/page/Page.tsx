@@ -24,9 +24,6 @@ export class Page extends PureComponent<Props> {
         <Parallax blur={{ min: -10, max: 20 }} bgImage={HouseImage} strength={500}>
           <Header />
         </Parallax>
-        <Parallax bgImage={MountainImage} strength={500}>
-          <div style={{ height: '50vh', minHeight: '300px' }} />
-        </Parallax>
         <AboutMe />
         <Gallery />
         <Parallax bgImage={LakeImage} strength={200}>

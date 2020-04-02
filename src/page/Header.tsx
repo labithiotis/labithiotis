@@ -10,7 +10,7 @@ export class Header extends PureComponent {
         <Contents>
           <Banner>
             <Title>Welcome</Title>
-            <SubTitle>I’m an experienced software engineer</SubTitle>
+            <SubTitle>I’m a Senior Software Engineer</SubTitle>
             <SubTitleSmall>
               Working remotely from Austria <FaRegHeart size={12} />
             </SubTitleSmall>
