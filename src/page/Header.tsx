@@ -26,6 +26,7 @@ const Section = styled.div`
   width: 100%;
   height: 100vh;
 `;
+
 const Contents = styled.div`
   position: fixed;
   display: flex;
@@ -49,6 +50,10 @@ const Banner = styled.div`
   :hover {
     background-color: rgba(0, 0, 0, 0.9);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  @media only screen and (max-width: 1000px) {
+    padding: 40px 20px;
   }
 `;
 

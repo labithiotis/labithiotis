@@ -22,14 +22,11 @@ export const Body = styled.p`
 `;
 
 export const Section = styled.div<{ color?: string; backgroundColor?: string; minHeight?: string }>`
-  position: relative;
-  z-index: 5;
   display: flex;
   justify-content: center;
   background-color: ${({ backgroundColor = 'white' }) => backgroundColor};
   color: ${({ color, theme }) => color || theme.black};
   min-height: ${({ minHeight = '0px' }) => minHeight};
-  pointer-events: auto;
 `;
 
 export const MainContainer = styled.div`
@@ -37,5 +34,8 @@ export const MainContainer = styled.div`
   padding: 40px;
   width: 100%;
   max-width: 800px;
-  pointer-events: auto;
+
+  @media only screen and (max-width: 1000px) {
+    text-align: center;
+  }
 `;
