@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
+
+import HouseImage from '../assets/images/house.jpg';
 import { H1, H2 } from '../components/Typography';
 import { FaRegHeart } from 'react-icons/fa';
 
@@ -25,16 +27,17 @@ const Section = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
+  background: url(${HouseImage}) top center;
+  background-size: cover;
 `;
 
 const Contents = styled.div`
-  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
-  z-index: 0;
+  z-index: 5;
 `;
 
 const Banner = styled.div`
@@ -45,7 +48,6 @@ const Banner = styled.div`
   transition: background-color 0.5s ease, box-shadow 0.2s ease;
   background-color: rgba(0, 0, 0, 0.7);
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  pointer-events: auto;
 
   :hover {
     background-color: rgba(0, 0, 0, 0.9);

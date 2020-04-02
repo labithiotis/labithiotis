@@ -1,6 +1,7 @@
 import React, { PureComponent, ReactNode } from 'react';
 import Carousel, { ModalGateway, Modal } from 'react-images';
 import styled, { createGlobalStyle } from 'styled-components';
+
 import { theme } from '../../theme';
 import { VideoPlayer } from './VideoPlayer';
 import { FaPlayCircle } from 'react-icons/fa';

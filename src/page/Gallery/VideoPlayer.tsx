@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
-import styled from 'styled-components';
-import { Media, MediaVideo } from './GalleryGrid';
 import ReactPlayer from 'react-player';
+import styled from 'styled-components';
+
+import { Media, MediaVideo } from './GalleryGrid';
 
 type Props = {
   currentIndex: number;

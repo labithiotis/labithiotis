@@ -21,21 +21,21 @@ export const Body = styled.p`
   }
 `;
 
-export const Section = styled.div<{ color?: string; backgroundColor?: string; minHeight?: string }>`
+export const Section = styled.div<{ color?: string; backgroundColor?: string; }>`
   display: flex;
   justify-content: center;
   background-color: ${({ backgroundColor = 'white' }) => backgroundColor};
   color: ${({ color, theme }) => color || theme.black};
-  min-height: ${({ minHeight = '0px' }) => minHeight};
 `;
 
 export const MainContainer = styled.div`
   position: relative;
   padding: 40px;
   width: 100%;
-  max-width: 800px;
+  box-sizing: border-box;
 
   @media only screen and (max-width: 1000px) {
+    padding: 30px;
     text-align: center;
   }
 `;

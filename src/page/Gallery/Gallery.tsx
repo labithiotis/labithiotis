@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
+
 import { MainContainer, Section } from '../../components/Typography';
 import { GalleryGrid, Media } from './GalleryGrid';
 import { Groups, media } from './media';
@@ -24,7 +25,7 @@ export class Gallery extends PureComponent<Props, State> {
   render() {
     const { tabNames, currentTab } = this.state;
     return (
-      <Section minHeight="400px">
+      <Section>
         <Container>
           <Tabs>
             {tabNames.map(name => (
@@ -61,6 +62,10 @@ const Tab = styled.li<{ active: boolean }>`
   padding: 0 10px;
   cursor: pointer;
   color: ${({ active, theme }) => (active ? theme.primary : theme.black)};
+
+  @media only screen and (max-width: 1000px) {
+    padding: 0;
+  }
 
   :before {
     position: absolute;

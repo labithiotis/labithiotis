@@ -1,35 +1,8 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
+
 import { H1, Body, MainContainer, Section } from '../components/Typography';
 import MyImage from '../assets/images/darren_labithiotis.jpg';
-
-const Image = styled.div`
-  margin-left: 30px;
-  height: 250px;
-  width: 250px;
-  border-radius: 50%;
-  background: url(${MyImage}) center center;
-  background-size: cover;
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  @media only screen and (max-width: 1000px) {
-    flex-direction: column-reverse;
-    text-align: center;
-    
-    ${Image} {
-      margin: 10px;
-    }
-  }
-`;
-
-const Contents = styled.div`
-  flex: 1;
-`;
 
 export class AboutMe extends PureComponent {
   render() {
@@ -66,3 +39,31 @@ export class AboutMe extends PureComponent {
     );
   }
 }
+
+const Image = styled.div`
+  margin-left: 30px;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  background: url(${MyImage}) center center;
+  background-size: cover;
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @media only screen and (max-width: 1000px) {
+    flex-direction: column-reverse;
+    text-align: center;
+
+    ${Image} {
+      margin: 10px;
+    }
+  }
+`;
+
+const Contents = styled.div`
+  flex: 1;
+`;
