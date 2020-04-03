@@ -33,6 +33,7 @@ export const MainContainer = styled.div`
   padding: 40px;
   width: 100%;
   box-sizing: border-box;
+  max-width: 800px;
 
   @media only screen and (max-width: 1000px) {
     padding: 30px;

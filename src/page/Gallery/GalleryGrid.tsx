@@ -136,4 +136,9 @@ const MediaPreview = styled.div`
       background-color: ${theme.primary};
     }
   }
+
+  @media only screen and (max-width: 1000px) {
+    width: 50%;
+    height: 120px;
+  }
 `;
