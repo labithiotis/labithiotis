@@ -1,11 +1,12 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "labithiotis-portfolio",
+  "name": "labithiotis",
   "account_id": "7bc5bf0e3b7386107e27d74c22b449c0",
   "main": "@tanstack/react-start/server-entry",
   "compatibility_date": "2026-10-02",
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
+  "preview_urls": true,
   "observability": { "enabled": true },
   "routes": [
     { "pattern": "labithiotis.com/*", "zone_name": "labithiotis.com" },
