@@ -1,0 +1,11 @@
+{
+  "file": "face2-shoulders.webp",
+  "createdAt": "2026-10-03",
+  "source": "User-supplied Face2.jpg and the earlier transparent portrait cutout",
+  "producer": "Built-in Imagegen",
+  "editTarget": "face2-cutout.webp (archived locally)",
+  "prompt": "Use case: identity-preserve. Asset type: transparent photographic portrait cutout for a portfolio hero. Image 1 is the EDIT TARGET, the current transparent Face2 portrait cutout. Image 2 is the ORIGINAL Face2.jpg, supporting reference for the exact face, hair, skin, expression, lighting and sweater. Edit ONLY the shoulder and lower sweater silhouette. Keep the existing face, head, hair, facial features, smile, eyes, skin texture, age, neck, pose, perspective and lighting unchanged. The existing cutout is chopped by rectangular canvas edges at the left, right and bottom. Complete the small missing parts of the same dark charcoal knitted sweater so both shoulders are fully visible, slope naturally, and round downward into a finished upper-chest/bust contour. The subject must have a complete rounded organic silhouette with transparent margin around it, including below the sweater. Keep the head prominent and the additional sweater area compact, suitable for a head-and-shoulders hero. Natural crisp hair and sweater edges. The face and sweater must stay fully opaque. Absolutely no opacity fade, gradient fade, feathered lower edge, blur, halo, shadow, oval frame, circle frame, artificial geometric mask, or straight horizontal/vertical clipping line. No background scenery, text or watermark. Real transparent alpha background. Preserve the exact original photographic identity; change only missing sweater/shoulder contour needed to eliminate the hard canvas crop.",
+  "width": 1254,
+  "height": 1254,
+  "notes": "User-requested completion of the dark sweater's shoulders and rounded lower bust outline. Transparent background, opaque face and sweater, no opacity fade or CSS alpha mask. The source photo and intermediate cutout are preserved in the local archive."
+}

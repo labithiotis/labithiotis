@@ -1,0 +1,57 @@
+{
+  "provider": "Simple Icons",
+  "downloadedAt": "2026-10-04",
+  "notes": "Local SVG brand marks, colored for visibility on the dark tech-stack panel. Decorative images accompany visible text labels.",
+  "icons": [
+    {
+      "slug": "typescript",
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/typescript.svg",
+      "color": "#3178c6"
+    },
+    {
+      "slug": "react",
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/react.svg",
+      "color": "#61dafb"
+    },
+    {
+      "slug": "cloudflare",
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/cloudflare.svg",
+      "color": "#f38020"
+    },
+    {
+      "slug": "tanstack",
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/tanstack.svg",
+      "color": "#ffcf38"
+    },
+    {
+      "slug": "prisma",
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/prisma.svg",
+      "color": "#e4ecef"
+    },
+    {
+      "slug": "posthog",
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/posthog.svg",
+      "color": "#f5a623"
+    },
+    {
+      "slug": "effect",
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/effect.svg",
+      "color": "#ecefed"
+    },
+    {
+      "slug": "openrouter",
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/openrouter.svg",
+      "color": "#c4b5fd"
+    },
+    {
+      "slug": "nestjs",
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nestjs.svg",
+      "color": "#e0234e"
+    },
+    {
+      "slug": "postgresql",
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/postgresql.svg",
+      "color": "#6c9ccc"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://react.doctor/schema/config.json",
+  "noScore": false,
+  "blocking": "error",
+  "warnings": false,
+  "share": false,
+  "verbose": true,
+  "ignore": {
+    "files": ["docs/**"]
+  },
+  "rules": {
+    "react-doctor/only-export-components": "off"
+  }
+}

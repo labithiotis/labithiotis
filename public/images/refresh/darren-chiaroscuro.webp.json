@@ -1,0 +1,10 @@
+{
+  "file": "darren-chiaroscuro.webp",
+  "createdAt": "2026-10-04",
+  "source": "User-supplied darren.png studio portrait",
+  "producer": "Built-in Imagegen",
+  "prompt": "Use case: lighting-weather / identity-preserve. Edit target: the attached darren.png studio portrait. Asset type: About-section portrait for Darren's personal portfolio, displayed inside a large circular crop. Primary request: restyle this exact photograph with tasteful chiaroscuro lighting inspired by Rembrandt. Preserve Darren's identity precisely: same facial proportions, eye color, hair and hairline, apparent age, neutral expression, pose, navy blazer and gray sweater. Change the lighting and grading only, with a subtle painterly photographic finish, not a new invented face. Strong soft directional light from upper camera left illuminates one side of his face; the other side falls into deep, shaped shadow with a small classic Rembrandt light triangle on the cheek. Keep both eyes and all facial features readable. Warm ivory highlights, natural restrained skin tones, charcoal shadows and a plain near-black dark studio background, suitable against a cream website panel. Composition: square photograph, centered head and shoulders with extra breathing room above hair and around the head, ensuring the full hair, face and shoulders read cleanly in a circular crop. No text, logos, frames, vignette border, props, extreme black clipping, aging, face reshaping, smoothed plastic skin, or opacity fading. Opaque background. Deliver the edited square portrait image only.",
+  "width": 1000,
+  "height": 1000,
+  "notes": "User-requested chiaroscuro lighting and grading with identity, pose, and clothing preserved. The image has an opaque studio background. Circular framing is applied in CSS. Resized to 1000×1000 and compressed to WebP with cwebp at quality 88."
+}

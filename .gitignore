@@ -4,3 +4,10 @@ dist
 *.log
 .env*
 .cache
+.local/
+.impeccable/
+.tanstack/
+.wrangler/
+.output/
+.dev.vars*
+worker-configuration.d.ts
