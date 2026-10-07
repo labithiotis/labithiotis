@@ -234,7 +234,7 @@ function animateIntro(run: RunAnimation, playIntro: boolean, keyboardFocus: bool
       1350,
       800,
     );
-    run(document.querySelector('.hero-location'), fade, 1050, 300);
+    run(document.querySelector('.hero-location'), [{ opacity: 0 }, { opacity: 1 }], 2200, 300);
     run(
       document.querySelector('.experience-strip'),
       [

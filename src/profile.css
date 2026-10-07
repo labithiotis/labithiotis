@@ -1354,8 +1354,12 @@ body {
 /* Match the first animation frame before hydration; the head bootstrap opts in. */
 @media screen and (prefers-reduced-motion: no-preference) {
   html:is([data-page-entrance="pending"], [data-page-entrance="active"])
-    :is(.site-header, .hero-role, .hero-location):not([data-entrance-revealed]):not(:focus-within) {
+    :is(.site-header, .hero-role):not([data-entrance-revealed]):not(:focus-within) {
     opacity: 0.45;
+  }
+
+  html:is([data-page-entrance="pending"], [data-page-entrance="active"]) .hero-location:not([data-entrance-revealed]) {
+    opacity: 0;
   }
 
   html:is([data-page-entrance="pending"], [data-page-entrance="active"])
